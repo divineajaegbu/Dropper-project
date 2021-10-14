@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>form</title>
+        <link rel="stylesheet" href="/Homepage/style/script.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+         $(document).ready(function(){
+             $("#submit").click(function(){
+                 $("#required").css("opacity", "1");
+             })
+         })
+        </script>
+    </head>
+    <body>
+    <main>
+        <div class="dropper-list">
+            <h1 class="dropper">dropper</h1>
+            <li></li>
+        </div>
+        <br/>
+        <br/>
+        <h2>Let's get you started</h2>
+        <p class="sign-up">Alright signed up?</p>
+        <a href="side.html">login</a>
+    </main>
+<footer>
+    <div class="flex">
+        <hr/>
+        <div class="chemark-1">
+            <ion-icon name="checkmark-outline" class="chemark-outline-1"></ion-icon>
+            <p class="personal">personal information</p>
+        </div>
+        <div class="contact">
+            <hr class="hr-2"/>
+            <ion-icon name="checkmark-outline" class="chemark-outline-2"></ion-icon> 
+            <p class="details">Contact Details</p>
+        </div>
+        <div class="review">
+            <ion-icon name="checkmark-outline" class="chemark-outline-3"></ion-icon> 
+            <p class="reviews">review details</p>
+        </div>
+    </div>
+</footer>
+
+<aside>
+ <form>
+     <label for="fname">Firstname</label><br/>
+     <br/>
+     <input type="text" id="firstname" name="firstname"><br/>
+     <p id="required">First name is required</p><br/>
+     <div class="container">
+     <div class="must">
+     <label for="lname">Last name</label><br/>
+     <br/>
+     <input type="text" id="lname" name="lastname"><br/>
+     <p class="last">Last name is required</p><br/>
+    </div>
+     <div class="shift-left">
+     <label for="email">Email address</label><br/>
+     <br/>
+     <input type="email" id="email" name="email" required><br/>
+     <p class="acceptable">Email address is required</p>
+    </div>
+    </div>
+    <br/>
+    <div class="password">
+        <label for="password">password</label><br/>
+        <br/>
+        <input type="password" id="password-key" name="password" required><br/>
+        <p class="password-required">password is required</p>
+    </div>
+    <div class="username">
+        <label for="username">username</label><br/>
+        <br/>
+        <br/>
+        <input type="text" id="username-2" name="username" required><br/>
+        <p class="username-3">username is required</p>
+    </div>
+    <input type="submit" value="Next" id="submit">
+  </form>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    </body>
+</html>

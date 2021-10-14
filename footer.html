@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.tooltipster.min.js"></script>
+
+  </head>
+  <style>
+    .header {
+      background-color: green;
+      width: max-content;
+      padding: 10px 10px 20px 10px;
+      color: white;
+      text-align: center;
+    }
+
+  .header {
+    animation: fadeInUpBig 2s  ;
+  }
+
+.animation {
+  animation-duration: 2s;
+  animation-delay: 1s;
+}
+
+#animated-fading {
+  position: absolute;
+  top: 0;
+}
+
+.tooltip {
+  background-color: black;
+  color: white;
+  width: max-content;
+  padding: 10px 10px 10px 10px;
+}
+
+.tooltip {
+
+  background-color: green;
+      width: max-content;
+      padding: 10px 10px 20px 10px;
+      color: white;
+      text-align: center;
+}
+
+.tooltip::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -10px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid green;
+}
+
+  </style>
+  <body>
+    <h1 class="header animated wobble
+    infinite" id="border">borderbox</h1>
+    <p id="element"></p>
+    <p class="tooltip">this is me</p>
+
+    <script>
+$('#my-element').tooltipster({
+	content: 'My first tooltip',
+	position: 'top'
+});
+
+// instantiate a second tooltip and keep the returned Tooltipster objects array for later use of the API
+var tooltipsterObjects = $('#my-element').tooltipster({
+	// don't forget to provide content here as the 1st tooltip will have deleted the original title attribute of the element
+	content: 'My second tooltip',
+	multiple: true,
+	position: 'bottom'
+});
+
+// since the jQuery selector matches only one element, the array will contain only one Tooltipster object.
+// Otherwise the array would contain one object for each matched element, in the same order as them
+var tooltip2 = tooltipsterObjects[0];
+
+// use this Tooltipster object to make any API method call on the tooltip
+tooltip2.content('New content for my second tooltip').show();
+// all documented methods can be called that way
+var element = tooltip2.elementTooltip();
+
+// calling the API methods in the usual way only affects the first tooltip that was created on the element
+$('#my-element').tooltipster('content', 'New content for my first tooltip')
+// You may use the 'multiple' option on the first tooltip as well, it will return an array of objects too
+var tooltipsterObjects = $('#my-element').tooltipster({
+	content: 'My first tooltip',
+	multiple: true
+});
+
+// this is also a way to call API methods on the first tooltip
+var tooltip1 = tooltipsterObjects[0];
+tooltip1.content('New content for my first tooltip').show();
+
+ 
+    </script>
+  </body>
+</html>
